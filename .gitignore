@@ -1,0 +1,23 @@
+# Source manuals are intentionally kept outside the GitHub repository.
+Manuals/
+
+# Python and analysis byproducts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local analysis outputs
+pedpy-results/
+outputs/
+results/
+dist/
+
+# Environment files
+.venv/
+venv/
+env/
+.env
+

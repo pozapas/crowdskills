@@ -1,0 +1,5 @@
+interface:
+  display_name: "PedPy"
+  short_description: "Pedestrian trajectory analysis workflows"
+  default_prompt: "Use $pedpy to analyze pedestrian trajectories with PedPy."
+
