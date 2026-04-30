@@ -1,0 +1,5 @@
+interface:
+  display_name: "JuPedSim"
+  short_description: "Advanced pedestrian simulation design"
+  default_prompt: "Use $jupedsim to design, run, and validate a JuPedSim pedestrian dynamics experiment."
+
