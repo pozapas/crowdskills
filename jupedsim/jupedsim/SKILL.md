@@ -1,6 +1,6 @@
 ---
 name: jupedsim
-description: "Advanced JuPedSim pedestrian dynamics simulation skill for designing, implementing, validating, and analyzing microscopic evacuation and crowd movement experiments. Use when users need JuPedSim code or research guidance for geometry, routing, journeys, stages, exits, queues, waiting sets, direct steering, Collision Free Speed, Anticipation Velocity, Generalized Centrifugal Force, Social Force, agent distributions, SQLite trajectory output, custom serializers, model comparison, calibration, uncertainty, sensitivity analysis, bottlenecks, lane formation, route-choice experiments, experiment manifests, recording validation, or PhD-level simulation study design."
+description: "JuPedSim pedestrian dynamics simulation skill for designing, implementing, validating, and analyzing microscopic evacuation and crowd movement experiments. Use when users need JuPedSim code or research guidance for geometry, routing, journeys, stages, exits, queues, waiting sets, direct steering, Collision Free Speed, Anticipation Velocity, Generalized Centrifugal Force, Social Force, agent distributions, SQLite trajectory output, custom serializers, model comparison, calibration, uncertainty, sensitivity analysis, bottlenecks, lane formation, route-choice experiments, experiment manifests, recording validation, or advanced simulation study design."
 ---
 
 # JuPedSim
@@ -24,7 +24,7 @@ Start every JuPedSim task by pinning down:
 
 If the user asks for "a simulation" without these details, choose conservative defaults and mark them clearly in code comments or the report.
 
-## Advanced Operating Mode
+## Operating Mode
 
 For research tasks, treat the simulation as an argument with evidence:
 
@@ -39,7 +39,7 @@ For research tasks, treat the simulation as an argument with evidence:
 - Read `references/jupedsim-api-map.md` for callable classes, functions, and parameter surfaces.
 - Read `references/jupedsim-model-selection.md` before choosing or comparing microscopic models.
 - Read `references/jupedsim-geometry-routing.md` when building geometry, journeys, stages, transitions, queues, or direct steering.
-- Read `references/jupedsim-research-workflows.md` for complete experiment patterns and PhD-level study design.
+- Read `references/jupedsim-research-workflows.md` for complete experiment patterns and advanced study design.
 - Read `references/jupedsim-experimental-design.md` when the answer should include hypotheses, design-of-experiments, validity, or publication-quality study framing.
 - Read `references/jupedsim-calibration-uncertainty.md` for calibration, sensitivity, uncertainty, or statistically defensible model comparison.
 - Read `references/jupedsim-validation-analysis.md` before finalizing outputs, interpreting results, or writing postprocessing.

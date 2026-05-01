@@ -34,7 +34,7 @@ Specify non-default values in the script and in the result summary. Avoid relyin
 
 ## Calibration Posture
 
-Use this sequence for PhD-level work:
+Use this sequence for advanced level work:
 
 1. Define observable targets before tuning: evacuation time, flow at a bottleneck, density profile, speed distribution, lane order parameter, queue dwell time, or trajectory similarity.
 2. Lock geometry and initial conditions.

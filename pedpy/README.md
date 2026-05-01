@@ -83,4 +83,4 @@ The skill follows progressive disclosure:
 - `references/pedpy-pitfalls.md` captures the assumptions and checks that usually decide whether results are trustworthy.
 - `assets/templates/pedpy_analysis_template.py` gives Codex a starter script to adapt when the user wants a full analysis file.
 
-This keeps the agent fast on common tasks while still giving it enough depth for advanced pedestrian simulation analysis.
+This keeps the agent fast on common tasks while still giving it enough depth for pedestrian simulation analysis.

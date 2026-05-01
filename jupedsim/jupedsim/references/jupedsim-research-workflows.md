@@ -1,6 +1,6 @@
 # Research Workflows
 
-Use these patterns to construct PhD-level simulation studies rather than one-off scripts.
+Use these patterns to construct  advanced level simulation studies rather than one-off scripts.
 
 ## Single Scenario Pattern
 

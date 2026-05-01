@@ -127,7 +127,7 @@ A strong JuPedSim study report includes:
 | Overfitting | parameters tuned to one case | holdout geometry or validation scenario |
 | Statistical noise | conclusion changes by seed | confidence intervals, paired comparisons |
 
-## Minimum PhD-Level Deliverable
+## Minimum Advanced Level Deliverable
 
 For thesis or paper support, produce:
 

@@ -69,7 +69,7 @@ Build a JuPedSim simulation with queues, waiting sets, and PedPy postprocessing 
 ```
 
 ```text
-Use $jupedsim to create a PhD-level experiment plan for bottleneck capacity with uncertainty analysis and a manifest.
+Use $jupedsim to create an experiment plan for bottleneck capacity with uncertainty analysis and a manifest.
 ```
 
 ## Scripted Utilities
