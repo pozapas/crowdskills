@@ -1,0 +1,4 @@
+interface:
+  display_name: "PeTrack"
+  short_description: "Pedestrian trajectory extraction workflow"
+  default_prompt: "Use $petrack to plan, calibrate, track, correct, and validate PeTrack trajectory extraction."
