@@ -11,7 +11,7 @@ Use these patterns to construct PhD-level simulation studies rather than one-off
 5. Add agents with explicit model parameters.
 6. Run with max-iteration guard.
 7. Close writer.
-8. Validate trajectory output.
+8. Validate trajectory output, preferably with `scripts/validate_sqlite_recording.py`.
 9. Analyze with JuPedSim `Recording`, PedPy, or custom metrics.
 10. Save a small manifest of assumptions.
 
@@ -103,7 +103,7 @@ For parameter sweeps:
 - Sweep one conceptual factor at a time when possible.
 - Use factorial designs only when interactions are central to the question.
 - Repeat seeds for stochastic placement.
-- Store one row per run in a manifest with parameters and output paths.
+- Store one row per run in a manifest with parameters and output paths. Use `scripts/create_experiment_matrix.py` when a Cartesian-product run plan is appropriate.
 - Separate simulation generation from metric calculation so failed runs can be diagnosed.
 
 Useful sweep axes:
@@ -130,4 +130,3 @@ Common metrics:
 - mean speed and speed distribution
 - time spent in queue/waiting set
 - route usage by journey/group
-

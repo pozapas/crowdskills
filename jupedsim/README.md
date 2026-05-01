@@ -15,12 +15,18 @@ jupedsim/
     |   `-- templates/
     |       |-- evacuation_scenario_template.py
     |       `-- experiment_matrix_template.py
+    |-- scripts/
+    |   |-- create_experiment_matrix.py
+    |   `-- validate_sqlite_recording.py
     `-- references/
         |-- jupedsim-api-map.md
+        |-- jupedsim-calibration-uncertainty.md
+        |-- jupedsim-experimental-design.md
         |-- jupedsim-geometry-routing.md
         |-- jupedsim-model-selection.md
         |-- jupedsim-pitfalls.md
         |-- jupedsim-research-workflows.md
+        |-- jupedsim-scripted-utilities.md
         `-- jupedsim-validation-analysis.md
 ```
 
@@ -38,7 +44,9 @@ The installable skill folder is `jupedsim/jupedsim/`.
 | Population design | density, number, percentage, ring distributions, seeds |
 | Output | SQLite writer, custom writers, recording API |
 | Research practice | model comparison, sensitivity analysis, calibration posture |
-| Validation | geometry, placement, routing, run completion, reproducibility manifests |
+| Experiment design | hypotheses, validity threats, DOE, replication, uncertainty |
+| Validation | geometry, placement, routing, run completion, SQLite recording audits |
+| Automation | manifest creation and recording validation scripts |
 
 ## Install Into Codex
 
@@ -60,6 +68,24 @@ Use $jupedsim to compare CSM, AVM, and Social Force on the same corridor evacuat
 Build a JuPedSim simulation with queues, waiting sets, and PedPy postprocessing for density and flow.
 ```
 
+```text
+Use $jupedsim to create a PhD-level experiment plan for bottleneck capacity with uncertainty analysis and a manifest.
+```
+
+## Scripted Utilities
+
+Create a run manifest:
+
+```powershell
+python .\jupedsim\jupedsim\scripts\create_experiment_matrix.py --scenario bottleneck --models csm,csm_v2,avm --seeds 1001,1002,1003 --factor width=0.8,1.0,1.2 --out manifests\bottleneck.csv --force
+```
+
+Validate JuPedSim SQLite outputs:
+
+```powershell
+python .\jupedsim\jupedsim\scripts\validate_sqlite_recording.py outputs\*.sqlite --csv validation.csv
+```
+
 ## Manual Policy
 
 The JuPedSim package and documentation supplied for skill creation remain outside this GitHub-ready folder under:
@@ -72,5 +98,4 @@ The repo `.gitignore` excludes `Manuals/`. This folder contains distilled guidan
 
 ## Design Philosophy
 
-The skill is intentionally research-oriented. A high-quality JuPedSim answer should not only produce executable code; it should also make the model assumptions, geometry choices, routing logic, stochastic seeds, output interval, validation checks, and postprocessing metrics visible.
-
+The skill is intentionally research-oriented. A high-quality JuPedSim answer should not only produce executable code; it should also make the hypothesis, model assumptions, geometry choices, routing logic, stochastic seeds, output interval, validation checks, uncertainty, and postprocessing metrics visible.

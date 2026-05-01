@@ -44,6 +44,12 @@ Check:
 
 ## SQLite Recording Checks
 
+For automated checks, use the bundled validator:
+
+```powershell
+python jupedsim/jupedsim/scripts/validate_sqlite_recording.py outputs/*.sqlite --csv validation.csv
+```
+
 ```python
 recording = jps.Recording("run.sqlite")
 print(recording.num_frames, recording.fps, recording.bounds())
@@ -89,6 +95,9 @@ For every serious run, write a manifest row containing:
 - final agent count
 - elapsed time
 
+For Cartesian-product sweeps, the bundled `scripts/create_experiment_matrix.py`
+can create a starting manifest before simulations are executed.
+
 ## Reporting Standards
 
 A strong result section states:
@@ -101,4 +110,3 @@ A strong result section states:
 - what limitations remain
 
 Avoid phrases like "the simulation proves." Prefer "under this geometry, model, and parameterization, the simulation suggests."
-
