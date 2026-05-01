@@ -1,8 +1,7 @@
 # PeTrack Skill
 
 PeTrack extracts pedestrian trajectories from videos through calibration,
-recognition, tracking, correction, and export. This folder provides a
-Codex-ready skill for helping an agent guide PeTrack workflows and validate
+recognition, tracking, correction, and export. This folder provides an AI agent-ready skill for helping an agent guide PeTrack workflows and validate
 trajectory outputs without copying the PeTrack manuals into the repository.
 
 ## Folder Layout
@@ -31,8 +30,6 @@ petrack/
         `-- validate_txt_export.py
 ```
 
-The installable skill folder is `petrack/petrack/`.
-
 ## What The Skill Covers
 
 | Area | Coverage |
@@ -45,11 +42,76 @@ The installable skill folder is `petrack/petrack/`.
 | Export | `.trc`, `.txt`, HDF5, video/view export, marker IDs, head direction |
 | Validation | trajectory export checks, point-file creation, reproducibility notes |
 
-## Install Into Codex
+## Installation
+
+### Install Into Codex
+
+<details>
+<summary>Show install commands</summary>
+
+Codex supports personal and project skill directories.
+
+Personal install (all projects):
 
 ```powershell
 Copy-Item -Recurse ".\petrack\petrack" "$env:USERPROFILE\.codex\skills\petrack"
 ```
+
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" ".\.codex\skills\petrack"
+```
+
+</details>
+
+### Install Into Claude Code
+
+<details>
+<summary>Show install commands</summary>
+
+Claude Code loads skills from personal and project directories.
+
+Personal install (all projects):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" "$env:USERPROFILE\.claude\skills\petrack"
+```
+
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" ".\.claude\skills\petrack"
+```
+
+</details>
+
+### Install Into Cursor
+
+<details>
+<summary>Show install commands</summary>
+
+Cursor supports multiple skill directories.
+
+Personal install (all projects):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" "$env:USERPROFILE\.cursor\skills\petrack"
+```
+
+Alternative personal path (also supported):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" "$env:USERPROFILE\.agents\skills\petrack"
+```
+
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\petrack\petrack" ".\.cursor\skills\petrack"
+```
+
+</details>
 
 Example prompts:
 
@@ -78,15 +140,3 @@ Validate a PeTrack `.txt` export:
 ```powershell
 python .\petrack\petrack\scripts\validate_txt_export.py exports\run01.txt --csv validation\run01_validation.csv
 ```
-
-## Manual Policy
-
-The PeTrack documentation supplied for skill creation remains outside this
-GitHub-ready folder under:
-
-```text
-Manuals/PeTrack/
-```
-
-The repo `.gitignore` excludes `Manuals/`. This folder contains distilled
-guidance and utility code, not copied manuals.

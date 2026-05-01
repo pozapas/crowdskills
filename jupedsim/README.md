@@ -30,8 +30,6 @@ jupedsim/
         `-- jupedsim-validation-analysis.md
 ```
 
-The installable skill folder is `jupedsim/jupedsim/`.
-
 ## What The Skill Covers
 
 | Area | Coverage |
@@ -48,13 +46,78 @@ The installable skill folder is `jupedsim/jupedsim/`.
 | Validation | geometry, placement, routing, run completion, SQLite recording audits |
 | Automation | manifest creation and recording validation scripts |
 
-## Install Into Codex
+## Installation
+
+### Install Into Codex
+
+<details>
+<summary>Show install commands</summary>
+
+Codex supports personal and project skill directories.
+
+Personal install (all projects):
 
 ```powershell
 Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.codex\skills\jupedsim"
 ```
 
-Example prompts:
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.codex\skills\jupedsim"
+```
+
+</details>
+
+### Install Into Claude Code
+
+<details>
+<summary>Show install commands</summary>
+
+Claude Code loads skills from personal and project directories.
+
+Personal install (all projects):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.claude\skills\jupedsim"
+```
+
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.claude\skills\jupedsim"
+```
+
+</details>
+
+### Install Into Cursor
+
+<details>
+<summary>Show install commands</summary>
+
+Cursor supports multiple skill directories.
+
+Personal install (all projects):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.cursor\skills\jupedsim"
+```
+
+Alternative personal path (also supported):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.agents\skills\jupedsim"
+```
+
+Project-scoped install (current repo only):
+
+```powershell
+Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.cursor\skills\jupedsim"
+```
+
+</details>
+
+## Quickstart
 
 ```text
 Use $jupedsim to design a bottleneck capacity experiment with a parameter sweep over width and desired speed.
@@ -85,16 +148,6 @@ Validate JuPedSim SQLite outputs:
 ```powershell
 python .\jupedsim\jupedsim\scripts\validate_sqlite_recording.py outputs\*.sqlite --csv validation.csv
 ```
-
-## Manual Policy
-
-The JuPedSim package and documentation supplied for skill creation remain outside this GitHub-ready folder under:
-
-```text
-Manuals/JuPedSim/
-```
-
-The repo `.gitignore` excludes `Manuals/`. This folder contains distilled guidance, not copied manuals.
 
 ## Design Philosophy
 

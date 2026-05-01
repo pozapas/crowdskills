@@ -7,10 +7,6 @@ description: "JuPedSim pedestrian dynamics simulation skill for designing, imple
 
 Use this skill to build scientifically defensible JuPedSim simulations. Treat JuPedSim as an experiment design environment: geometry, model family, route graph, agent population, numerical settings, serialization, and postprocessing all shape the conclusion.
 
-## Source Policy
-
-Do not copy JuPedSim manuals, notebooks, examples, or package source into generated repo content. The local source used to create this skill lives outside the GitHub-bound skill folders under `Manuals/JuPedSim/`; treat it as source material, not distributable content.
-
 ## Research Framing
 
 Start every JuPedSim task by pinning down:

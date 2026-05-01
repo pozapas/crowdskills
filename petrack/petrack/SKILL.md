@@ -7,10 +7,6 @@ description: "PeTrack pedestrian trajectory extraction skill for planning camera
 
 Use this skill to guide high-quality PeTrack work from experiment planning through trajectory export. PeTrack is a GUI-centered tool, so answers should be operational: tell the user what to prepare, what to click or configure, what files to keep, and what checks to run before trusting exported trajectories.
 
-## Source Policy
-
-Do not copy PeTrack manuals, screenshots, videos, or documentation assets into generated repo content. The local docs used to create this skill live outside the GitHub-bound skill folder under `Manuals/PeTrack/`; treat them as source material, not distributable content.
-
 ## Reference Routing
 
 - Read `references/petrack-workflow-map.md` for the end-to-end PeTrack workflow.

@@ -5,11 +5,7 @@ description: "PedPy pedestrian trajectory analysis workflows for loading, valida
 
 # PedPy
 
-Use this skill to build reliable pedestrian trajectory analysis workflows with PedPy. The goal is to help Codex turn raw trajectory files and geometry into reproducible metrics, plots, and exported data without re-reading the full manual.
-
-## Source Policy
-
-Do not copy manuals into generated projects or this skill. The local manual used to create this skill lives outside the repo under `Manuals/pedpy/`; treat it as source material, not distributable skill content.
+Use this skill to build reliable pedestrian trajectory analysis workflows with PedPy. The goal is to help AI agents turn raw trajectory files and geometry into reproducible metrics, plots, and exported data without re-reading the full manual.
 
 ## First Pass
 
