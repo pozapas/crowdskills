@@ -48,7 +48,21 @@ jupedsim/
 
 ## Installation
 
-Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\jupedsim\jupedsim` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
+### Option 1: npx (all platforms)
+
+```bash
+npx skills add pozapas/crowdskills --full-depth --skill jupedsim
+```
+
+Install for a specific tool:
+
+```bash
+npx skills add pozapas/crowdskills --full-depth --skill jupedsim -a codex
+npx skills add pozapas/crowdskills --full-depth --skill jupedsim -a claude-code
+npx skills add pozapas/crowdskills --full-depth --skill jupedsim -a cursor
+```
+
+### Option 2: local installer
 
 ```powershell
 git clone https://github.com/pozapas/crowdskills.git
@@ -56,19 +70,15 @@ Set-Location crowdskills
 .\scripts\install-crowdskill.ps1 -Skill jupedsim
 ```
 
-Project-scoped install into another repository:
+Install into another project:
 
 ```powershell
 .\scripts\install-crowdskill.ps1 -Skill jupedsim -ProjectRoot "D:\path\to\your\project"
 ```
 
-Manual source path: `.\jupedsim\jupedsim`
+Manual source folder: `.\jupedsim\jupedsim`
 
-Default user destination: `$HOME\.agents\skills\jupedsim`
-
-Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
-
-If the skill does not appear in `/skills` or when typing `$jupedsim`, restart Codex.
+For other tools, copy the folder containing `SKILL.md` to that tool's skills directory. Restart the agent after installation if needed.
 
 ## Quickstart
 

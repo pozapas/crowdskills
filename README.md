@@ -61,40 +61,59 @@ tool-name/
 | `assets/templates/` | starter scripts, checklists, analysis pipelines, and batch runners |
 | `agents/openai.yaml` | short display metadata for agent UIs |
 
-## Quick Install
+## Getting Started
 
-Current Codex skill discovery uses `.agents/skills` for user and repository-scoped skills. Clone the repository first, then run the installer from the repository root so relative paths resolve correctly. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
+### Option 1: npx (all platforms)
+
+Install CrowdSkill with one command:
+
+```bash
+npx skills add pozapas/crowdskills --full-depth
+```
+
+Keep `--full-depth`; most CrowdSkill packages are nested one folder below the repository root.
+
+Install one specific skill:
+
+```bash
+npx skills add pozapas/crowdskills --full-depth --skill viswalk-com
+```
+
+Install for a specific tool:
+
+```bash
+npx skills add pozapas/crowdskills --full-depth -a codex
+npx skills add pozapas/crowdskills --full-depth -a claude-code
+npx skills add pozapas/crowdskills --full-depth -a cursor
+```
+
+This works for Codex, Claude Code, Cursor, and other tools that support Agent Skills.
+
+### Option 2: local installer
+
+Use this when you want explicit local control over source and destination folders.
 
 ```powershell
 git clone https://github.com/pozapas/crowdskills.git
 Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -All
 ```
 
-Install one skill for the current user:
+Install one skill:
 
 ```powershell
 .\scripts\install-crowdskill.ps1 -Skill viswalk-com
 ```
 
-Install all skills for the current user:
-
-```powershell
-.\scripts\install-crowdskill.ps1 -All
-```
-
-Install one skill into another project only:
+Install into another project:
 
 ```powershell
 .\scripts\install-crowdskill.ps1 -Skill viswalk-com -ProjectRoot "D:\path\to\your\project"
 ```
 
-List the exact source paths used by the installer:
+### Manual source folders
 
-```powershell
-.\scripts\install-crowdskill.ps1 -List
-```
-
-Current source paths:
+Copy the folder that contains `SKILL.md` into your agent's skills directory:
 
 | Skill | Source folder containing `SKILL.md` |
 | --- | --- |
@@ -106,7 +125,7 @@ Current source paths:
 | `massmotion` | `.\massmotion\massmotion` |
 | `evacuationz` | `.\evacuationz` |
 
-If a newly installed skill does not appear in `/skills` or when typing `$`, restart Codex. See the current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) for discovery locations.
+Restart your agent after installation if the skill does not appear immediately.
 
 ## Example Prompts
 
