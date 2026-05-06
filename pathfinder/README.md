@@ -43,68 +43,27 @@ pathfinder/
 
 ## Installation
 
-### Install Into Codex
-
-<details>
-<summary>Show install commands</summary>
-
-Personal install:
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\pathfinder\pathfinder` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" "$env:USERPROFILE\.codex\skills\pathfinder"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill pathfinder
 ```
 
-Project-scoped install:
+Project-scoped install into another repository:
 
 ```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" ".\.codex\skills\pathfinder"
+.\scripts\install-crowdskill.ps1 -Skill pathfinder -ProjectRoot "D:\path\to\your\project"
 ```
 
-</details>
+Manual source path: `.\pathfinder\pathfinder`
 
-### Install Into Claude Code
+Default user destination: `$HOME\.agents\skills\pathfinder`
 
-<details>
-<summary>Show install commands</summary>
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
 
-Personal install:
-
-```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" "$env:USERPROFILE\.claude\skills\pathfinder"
-```
-
-Project-scoped install:
-
-```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" ".\.claude\skills\pathfinder"
-```
-
-</details>
-
-### Install Into Cursor
-
-<details>
-<summary>Show install commands</summary>
-
-Personal install:
-
-```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" "$env:USERPROFILE\.cursor\skills\pathfinder"
-```
-
-Alternative personal path:
-
-```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" "$env:USERPROFILE\.agents\skills\pathfinder"
-```
-
-Project-scoped install:
-
-```powershell
-Copy-Item -Recurse ".\pathfinder\pathfinder" ".\.cursor\skills\pathfinder"
-```
-
-</details>
+If the skill does not appear in `/skills` or when typing `$pathfinder`, restart Codex.
 
 ## Quickstart
 

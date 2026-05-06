@@ -63,29 +63,50 @@ tool-name/
 
 ## Quick Install
 
-Install one skill into Codex:
+Current Codex skill discovery uses `.agents/skills` for user and repository-scoped skills. Clone the repository first, then run the installer from the repository root so relative paths resolve correctly. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" "$env:USERPROFILE\.codex\skills\pedpy"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
 ```
 
-Install all skills into Codex:
+Install one skill for the current user:
 
 ```powershell
-$skills = "jupedsim","pedpy","petrack","viswalk-com","pathfinder","massmotion","evacuationz"
-foreach ($skill in $skills) {
-  $source = ".\$skill\$skill"
-  if (-not (Test-Path $source)) { $source = ".\$skill" }
-  Copy-Item -Recurse $source "$env:USERPROFILE\.codex\skills\$skill" -Force
-}
+.\scripts\install-crowdskill.ps1 -Skill viswalk-com
 ```
 
-Project-scoped install:
+Install all skills for the current user:
 
 ```powershell
-New-Item -ItemType Directory -Force -Path ".\.codex\skills" | Out-Null
-Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.codex\skills\jupedsim" -Force
+.\scripts\install-crowdskill.ps1 -All
 ```
+
+Install one skill into another project only:
+
+```powershell
+.\scripts\install-crowdskill.ps1 -Skill viswalk-com -ProjectRoot "D:\path\to\your\project"
+```
+
+List the exact source paths used by the installer:
+
+```powershell
+.\scripts\install-crowdskill.ps1 -List
+```
+
+Current source paths:
+
+| Skill | Source folder containing `SKILL.md` |
+| --- | --- |
+| `jupedsim` | `.\jupedsim\jupedsim` |
+| `pedpy` | `.\pedpy\pedpy` |
+| `petrack` | `.\petrack\petrack` |
+| `viswalk-com` | `.\viswalk-com\viswalk-com` |
+| `pathfinder` | `.\pathfinder\pathfinder` |
+| `massmotion` | `.\massmotion\massmotion` |
+| `evacuationz` | `.\evacuationz` |
+
+If a newly installed skill does not appear in `/skills` or when typing `$`, restart Codex. See the current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) for discovery locations.
 
 ## Example Prompts
 

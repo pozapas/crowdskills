@@ -41,74 +41,27 @@ Pedestrian trajectory analysis is easy to get subtly wrong. Frame rates, coordin
 
 ## Installation
 
-### Install Into Codex
-
-<details>
-<summary>Show install commands</summary>
-
-Codex supports personal and project skill directories.
-
-Personal install (all projects):
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\pedpy\pedpy` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" "$env:USERPROFILE\.codex\skills\pedpy"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill pedpy
 ```
 
-Project-scoped install (current repo only):
+Project-scoped install into another repository:
 
 ```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" ".\.codex\skills\pedpy"
+.\scripts\install-crowdskill.ps1 -Skill pedpy -ProjectRoot "D:\path\to\your\project"
 ```
 
-</details>
+Manual source path: `.\pedpy\pedpy`
 
-### Install Into Claude Code
+Default user destination: `$HOME\.agents\skills\pedpy`
 
-<details>
-<summary>Show install commands</summary>
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
 
-Claude Code loads skills from personal and project directories.
-
-Personal install (all projects):
-
-```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" "$env:USERPROFILE\.claude\skills\pedpy"
-```
-
-Project-scoped install (current repo only):
-
-```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" ".\.claude\skills\pedpy"
-```
-
-</details>
-
-### Install Into Cursor
-
-<details>
-<summary>Show install commands</summary>
-
-Cursor supports multiple skill directories.
-
-Personal install (all projects):
-
-```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" "$env:USERPROFILE\.cursor\skills\pedpy"
-```
-
-Alternative personal path (also supported):
-
-```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" "$env:USERPROFILE\.agents\skills\pedpy"
-```
-
-Project-scoped install (current repo only):
-
-```powershell
-Copy-Item -Recurse ".\pedpy\pedpy" ".\.cursor\skills\pedpy"
-```
-
-</details>
+If the skill does not appear in `/skills` or when typing `$pedpy`, restart Codex.
 
 ## Quickstart
 

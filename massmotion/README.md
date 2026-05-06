@@ -43,23 +43,27 @@ massmotion/
 
 ## Installation
 
-### Install Into Codex
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\massmotion\massmotion` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\massmotion\massmotion" "$env:USERPROFILE\.codex\skills\massmotion"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill massmotion
 ```
 
-### Install Into Claude Code
+Project-scoped install into another repository:
 
 ```powershell
-Copy-Item -Recurse ".\massmotion\massmotion" "$env:USERPROFILE\.claude\skills\massmotion"
+.\scripts\install-crowdskill.ps1 -Skill massmotion -ProjectRoot "D:\path\to\your\project"
 ```
 
-### Install Into Cursor
+Manual source path: `.\massmotion\massmotion`
 
-```powershell
-Copy-Item -Recurse ".\massmotion\massmotion" "$env:USERPROFILE\.cursor\skills\massmotion"
-```
+Default user destination: `$HOME\.agents\skills\massmotion`
+
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
+
+If the skill does not appear in `/skills` or when typing `$massmotion`, restart Codex.
 
 ## Quickstart
 

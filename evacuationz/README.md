@@ -20,6 +20,7 @@
 - [Overview](#overview)
 - [Capabilities at a Glance](#capabilities-at-a-glance)
 - [Package Structure](#package-structure)
+- [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Command-Line Smoke Tests](#command-line-smoke-tests)
 - [Examples](#examples)
@@ -90,9 +91,35 @@ evacuationz/
 
 ---
 
+## Installation
+
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; Evacuationz is a flat skill package, so its manual source path is `.\evacuationz`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
+
+```powershell
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill evacuationz
+```
+
+Project-scoped install into another repository:
+
+```powershell
+.\scripts\install-crowdskill.ps1 -Skill evacuationz -ProjectRoot "D:\path\to\your\project"
+```
+
+Manual source path: `.\evacuationz`
+
+Default user destination: `$HOME\.agents\skills\evacuationz`
+
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
+
+If the skill does not appear in `/skills` or when typing `$evacuationz`, restart Codex.
+
+---
+
 ## Quick Start
 
-Invoke the skill using any of these prompt patterns inside Codex or Claude:
+Invoke the skill using any of these prompt patterns inside Codex or another Agent Skills-compatible tool:
 
 ```text
 Use evacuationz to audit this Evacuationz project folder:

@@ -48,74 +48,27 @@ jupedsim/
 
 ## Installation
 
-### Install Into Codex
-
-<details>
-<summary>Show install commands</summary>
-
-Codex supports personal and project skill directories.
-
-Personal install (all projects):
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\jupedsim\jupedsim` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.codex\skills\jupedsim"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill jupedsim
 ```
 
-Project-scoped install (current repo only):
+Project-scoped install into another repository:
 
 ```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.codex\skills\jupedsim"
+.\scripts\install-crowdskill.ps1 -Skill jupedsim -ProjectRoot "D:\path\to\your\project"
 ```
 
-</details>
+Manual source path: `.\jupedsim\jupedsim`
 
-### Install Into Claude Code
+Default user destination: `$HOME\.agents\skills\jupedsim`
 
-<details>
-<summary>Show install commands</summary>
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
 
-Claude Code loads skills from personal and project directories.
-
-Personal install (all projects):
-
-```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.claude\skills\jupedsim"
-```
-
-Project-scoped install (current repo only):
-
-```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.claude\skills\jupedsim"
-```
-
-</details>
-
-### Install Into Cursor
-
-<details>
-<summary>Show install commands</summary>
-
-Cursor supports multiple skill directories.
-
-Personal install (all projects):
-
-```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.cursor\skills\jupedsim"
-```
-
-Alternative personal path (also supported):
-
-```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" "$env:USERPROFILE\.agents\skills\jupedsim"
-```
-
-Project-scoped install (current repo only):
-
-```powershell
-Copy-Item -Recurse ".\jupedsim\jupedsim" ".\.cursor\skills\jupedsim"
-```
-
-</details>
+If the skill does not appear in `/skills` or when typing `$jupedsim`, restart Codex.
 
 ## Quickstart
 

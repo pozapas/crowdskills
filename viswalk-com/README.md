@@ -45,68 +45,27 @@ viswalk-com/
 
 ## Installation
 
-### Install Into Codex
-
-<details>
-<summary>Show install commands</summary>
-
-Personal install:
+Current [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills) use `.agents/skills` for user and repository-scoped skills. Clone the CrowdSkill repository first and run commands from its root; relative paths such as `.\viswalk-com\viswalk-com` only work after `Set-Location crowdskills`. The installer replaces the selected destination skill folder when it already exists, which avoids nested copies and stale files.
 
 ```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" "$env:USERPROFILE\.codex\skills\viswalk-com"
+git clone https://github.com/pozapas/crowdskills.git
+Set-Location crowdskills
+.\scripts\install-crowdskill.ps1 -Skill viswalk-com
 ```
 
-Project-scoped install:
+Project-scoped install into another repository:
 
 ```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" ".\.codex\skills\viswalk-com"
+.\scripts\install-crowdskill.ps1 -Skill viswalk-com -ProjectRoot "D:\path\to\your\project"
 ```
 
-</details>
+Manual source path: `.\viswalk-com\viswalk-com`
 
-### Install Into Claude Code
+Default user destination: `$HOME\.agents\skills\viswalk-com`
 
-<details>
-<summary>Show install commands</summary>
+Other agents that support the Agent Skills folder format can use the same source folder: copy the directory containing `SKILL.md` to that agent's configured skills path.
 
-Personal install:
-
-```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" "$env:USERPROFILE\.claude\skills\viswalk-com"
-```
-
-Project-scoped install:
-
-```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" ".\.claude\skills\viswalk-com"
-```
-
-</details>
-
-### Install Into Cursor
-
-<details>
-<summary>Show install commands</summary>
-
-Personal install:
-
-```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" "$env:USERPROFILE\.cursor\skills\viswalk-com"
-```
-
-Alternative personal path:
-
-```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" "$env:USERPROFILE\.agents\skills\viswalk-com"
-```
-
-Project-scoped install:
-
-```powershell
-Copy-Item -Recurse ".\viswalk-com\viswalk-com" ".\.cursor\skills\viswalk-com"
-```
-
-</details>
+If the skill does not appear in `/skills` or when typing `$viswalk-com`, restart Codex.
 
 ## Quickstart
 
