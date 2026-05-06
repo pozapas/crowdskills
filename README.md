@@ -26,10 +26,7 @@ CrowdSkill is a structured library of AI-agent skills for pedestrian dynamics re
 - [Installation](#installation)
 - [Representative Invocations](#representative-invocations)
 - [Workflow Coverage](#workflow-coverage)
-- [Development](#development)
-- [Vendor Manuals and Source Material](#vendor-manuals-and-source-material)
 - [Contributing a New Skill](#contributing-a-new-skill)
-- [Roadmap](#roadmap)
 
 ---
 
@@ -238,47 +235,6 @@ behavior against the published benchmark, and produce a structured run summary.
 
 ---
 
-## Development
-
-Validate a skill against the SkillForge quality rubric:
-
-```powershell
-$env:PYTHONIOENCODING='utf-8'
-python "$env:USERPROFILE\.agents\skills\SkillForge\scripts\quick_validate.py" ".\massmotion\massmotion"
-python "$env:USERPROFILE\.agents\skills\SkillForge\scripts\validate-skill.py" ".\massmotion\massmotion"
-```
-
-Compile all Python helpers and templates for syntax verification:
-
-```powershell
-python -m py_compile `
-  .\jupedsim\jupedsim\scripts\*.py `
-  .\petrack\petrack\scripts\*.py `
-  .\viswalk-com\viswalk-com\scripts\*.py `
-  .\pathfinder\pathfinder\scripts\*.py `
-  .\massmotion\massmotion\scripts\*.py
-```
-
-Inspect the worktree before committing:
-
-```powershell
-git status --short
-```
-
----
-
-## Vendor Manuals and Source Material
-
-Proprietary vendor documentation, generated manual indexes, and large simulation outputs are excluded from version control:
-
-```text
-Manuals/
-```
-
-Skills are authored from stable software capabilities, not transcribed from manuals. This keeps the repository self-consistent, independently auditable, and free of proprietary content. Large local analysis outputs belong in a separate results store with provenance metadata, not in a skill package.
-
----
-
 ## Contributing a New Skill
 
 1. Create the package root at `tool-name/tool-name/SKILL.md` following the canonical layout.
@@ -286,15 +242,5 @@ Skills are authored from stable software capabilities, not transcribed from manu
 3. Add `references/` entries for non-obvious modeling decisions, API contracts, and known pitfalls.
 4. Add `scripts/` only when a deterministic, single-responsibility helper materially reduces error surface or makes an implicit assumption explicit.
 5. Add `assets/templates/` for any task that a user will repeat across projects.
-6. Validate the skill against the SkillForge rubric before opening a pull request.
-7. Exclude proprietary manuals, generated indexes, and bulk simulation outputs from all commits.
+6. Exclude proprietary manuals, generated indexes, and bulk simulation outputs from all commits.
 
----
-
-## Roadmap
-
-- Simulation-to-PedPy bridge templates: automated trajectory format conversion and measurement geometry transfer between JuPedSim, MassMotion, Pathfinder, and the PedPy analysis layer.
-- Output schema validators for commercial-simulator CSV exports with version-aware column contracts.
-- Paired-scenario manifests for structured comparative studies (e.g., baseline versus intervention, normal versus emergency).
-- Reproducibility metadata helpers: run fingerprinting, geometry hash recording, and parameter provenance tracking.
-- Venue-class templates: transit stations, airports, stadia, educational facilities, and healthcare facilities, each with domain-appropriate demand models and performance indicators.
