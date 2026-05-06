@@ -1,0 +1,4 @@
+interface:
+  display_name: "MassMotion"
+  short_description: "Oasys MassMotion modeling, Python SDK scripting, console runs, and mmdb analysis"
+  default_prompt: "Use $massmotion to design, script, run, validate, and analyze an Oasys MassMotion pedestrian simulation workflow."
