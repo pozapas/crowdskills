@@ -1,0 +1,74 @@
+project:
+  name:
+  prepared_by:
+  date:
+  evacuationz_version:
+  purpose:
+  evidence_tier:
+
+files:
+  scenario:
+  map:
+  populate:
+  agent_type:
+  exit_behaviour:
+  simulation:
+  system:
+  batch_or_run_command:
+
+model_scope:
+  nodes:
+  safe_nodes:
+  connections:
+  doors:
+  stairs:
+  smoke:
+  lighting:
+  alarms:
+  behaviours:
+
+assumptions:
+  - id:
+    description:
+    value:
+    units:
+    source:
+    uncertainty:
+
+scenarios:
+  - id:
+    description:
+    geometry_variant:
+    population_variant:
+    behaviour_variant:
+    environment_variant:
+    seeds:
+      - 1
+    outputs:
+      - log
+      - evacuation
+      - nodes
+      - agents
+
+benchmarks:
+  - scenario_id:
+    benchmark_id:
+    expected:
+    observed:
+    tolerance:
+    status:
+    notes:
+
+outputs:
+  folder:
+  digest_file:
+  key_metrics:
+    final_time:
+    time_to_90_percent:
+    max_node_occupancy:
+    exit_split:
+
+limitations:
+  - 
+
+
