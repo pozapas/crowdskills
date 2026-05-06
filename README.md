@@ -8,6 +8,14 @@ CrowdSkill is a curated library of AI-agent skills for pedestrian dynamics, crow
 
 The repository is designed for agents that need to do real engineering work: write code, prepare batch runs, validate outputs, audit assumptions, and explain results without mixing source manuals into the GitHub history.
 
+## Version One At A Glance
+
+_Released May 6, 2026_
+
+<p align="center">
+  <img src="assets/poster.png" alt="CrowdSkill version one at a glance" width="100%">
+</p>
+
 ## What Is Inside
 
 | Skill | Focus | Best For |
