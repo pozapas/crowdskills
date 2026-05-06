@@ -1,0 +1,4 @@
+interface:
+  display_name: "Viswalk-COM"
+  short_description: "Python automation for PTV Viswalk pedestrian simulation through Vissim COM"
+  default_prompt: "Use $viswalk-com to design, code, validate, and explain Python automation for Viswalk pedestrian simulation through the PTV Vissim COM interface."
