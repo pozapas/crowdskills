@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pathfinder"
+  short_description: "Pathfinder pedestrian simulation workflows, scripting, batch runs, and output analysis"
+  default_prompt: "Use $pathfinder to design, run, script, validate, and analyze a Pathfinder pedestrian movement or egress simulation workflow."
