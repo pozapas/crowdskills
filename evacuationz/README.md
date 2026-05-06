@@ -9,7 +9,7 @@
 ![Scripts](https://img.shields.io/badge/scripts-Python%203-3572A5?style=flat-square&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/license-research%20use-lightgrey?style=flat-square)
 
-*Describe your building, occupants, and study goal in plain language â€” the skill converts that into structured workflows, XML drafts, validation checklists, benchmark comparisons, and report outlines.*
+*Describe your building, occupants, and study goal in plain language - the skill converts that into structured workflows, XML drafts, validation checklists, benchmark comparisons, and report outlines.*
 
 </div>
 
@@ -23,16 +23,16 @@
 - [Quick Start](#quick-start)
 - [Command-Line Smoke Tests](#command-line-smoke-tests)
 - [Examples](#examples)
-  - [1 â€” Project Folder Audit](#1--project-folder-audit)
-  - [2 â€” Populate from Occupant Counts](#2--populate-from-occupant-counts)
-  - [3 â€” Populate with Numeric Node References](#3--populate-with-numeric-node-references)
-  - [4 â€” Multiple Agent Types](#4--multiple-agent-types)
-  - [5 â€” Density-Based Population](#5--density-based-population)
-  - [6 â€” Scenario Output Contract](#6--scenario-output-contract)
-  - [7 â€” Benchmark Comparison](#7--benchmark-comparison)
-  - [8 â€” Completed Run Review](#8--completed-run-review)
-  - [9 â€” Design Comparison Study Plan](#9--design-comparison-study-plan)
-  - [10 â€” Research Workflow with Uncertainty](#10--research-workflow-with-uncertainty)
+  - [1 - Project Folder Audit](#1--project-folder-audit)
+  - [2 - Populate from Occupant Counts](#2--populate-from-occupant-counts)
+  - [3 - Populate with Numeric Node References](#3--populate-with-numeric-node-references)
+  - [4 - Multiple Agent Types](#4--multiple-agent-types)
+  - [5 - Density-Based Population](#5--density-based-population)
+  - [6 - Scenario Output Contract](#6--scenario-output-contract)
+  - [7 - Benchmark Comparison](#7--benchmark-comparison)
+  - [8 - Completed Run Review](#8--completed-run-review)
+  - [9 - Design Comparison Study Plan](#9--design-comparison-study-plan)
+  - [10 - Research Workflow with Uncertainty](#10--research-workflow-with-uncertainty)
 - [Input Reference](#input-reference)
 - [Common Modelling Mistakes](#common-modelling-mistakes)
 - [Recommended Workflow](#recommended-workflow)
@@ -69,23 +69,23 @@ The skill is accessible to new and experienced users alike. You can provide raw 
 
 ```
 evacuationz/
-â”œâ”€â”€ SKILL.md                        # Routing, workflow rules, use constraints
-â”œâ”€â”€ references/
-â”‚   â”œâ”€â”€ capability-map.md           # Full capability index
-â”‚   â”œâ”€â”€ modeling-protocol.md        # Modelling conventions and best practices
-â”‚   â”œâ”€â”€ xml-patterns.md             # Annotated XML patterns for all file roles
-â”‚   â”œâ”€â”€ verification-benchmark-atlas.md  # Benchmark cases with tolerances
-â”‚   â”œâ”€â”€ results-audit.md            # Output review guide
-â”‚   â””â”€â”€ research-design.md          # Study design and uncertainty guidance
-â”œâ”€â”€ templates/
-â”‚   â”œâ”€â”€ study-plan.md               # Study planning template
-â”‚   â”œâ”€â”€ report-outline.md           # Report structure template
-â”‚   â”œâ”€â”€ scenario-manifest.yaml      # Scenario manifest template
-â”‚   â””â”€â”€ verification-matrix.csv     # Verification matrix template
-â””â”€â”€ scripts/
-    â”œâ”€â”€ validate_enz_project.py     # Project folder auditor
-    â”œâ”€â”€ summarize_evac_outputs.py   # Run output summariser
-    â””â”€â”€ compare_benchmark.py        # Benchmark comparator
+|-- SKILL.md                        # Routing, workflow rules, use constraints
+|-- references/
+|   |-- capability-map.md           # Full capability index
+|   |-- modeling-protocol.md        # Modelling conventions and best practices
+|   |-- xml-patterns.md             # Annotated XML patterns for all file roles
+|   |-- verification-benchmark-atlas.md  # Benchmark cases with tolerances
+|   |-- results-audit.md            # Output review guide
+|   `-- research-design.md          # Study design and uncertainty guidance
+|-- templates/
+|   |-- study-plan.md               # Study planning template
+|   |-- report-outline.md           # Report structure template
+|   |-- scenario-manifest.yaml      # Scenario manifest template
+|   `-- verification-matrix.csv     # Verification matrix template
+`-- scripts/
+    |-- validate_enz_project.py     # Project folder auditor
+    |-- summarize_evac_outputs.py   # Run output summariser
+    `-- compare_benchmark.py        # Benchmark comparator
 ```
 
 ---
@@ -133,14 +133,14 @@ python .\scripts\summarize_evac_outputs.py .\test --json
 |--------|--------------------|
 | `validate_enz_project.py` | Scans XML/GraphML inputs; reports file roles, counts, missing references, warnings |
 | `compare_benchmark.py --list` | Prints all available benchmark case names |
-| `compare_benchmark.py --case â€¦ --observed â€¦` | Returns pass/fail against tolerance |
+| `compare_benchmark.py --case ... --observed ...` | Returns pass/fail against tolerance |
 | `summarize_evac_outputs.py` | Requires output files (logs, CSVs); exits cleanly on input-only folders |
 
 ---
 
 ## Examples
 
-### 1 â€” Project Folder Audit
+### 1 - Project Folder Audit
 
 <details>
 <summary>Show prompt and expected output</summary>
@@ -184,7 +184,7 @@ Warnings:
 
 ---
 
-### 2 â€” Populate from Occupant Counts
+### 2 - Populate from Occupant Counts
 
 <details>
 <summary>Show prompt and expected XML</summary>
@@ -242,7 +242,7 @@ Now validate the generated populate.xml and confirm it matches my population pla
 
 ---
 
-### 3 â€” Populate with Numeric Node References
+### 3 - Populate with Numeric Node References
 
 <details>
 <summary>Show prompt and expected XML</summary>
@@ -298,7 +298,7 @@ Population:
 
 ---
 
-### 4 â€” Multiple Agent Types
+### 4 - Multiple Agent Types
 
 <details>
 <summary>Show prompt and expected XML</summary>
@@ -309,10 +309,10 @@ Population:
 Use evacuationz to create populate.xml.
 
 Occupants:
-- 90 adults in Main Office              â†’ agent type: adult
-- 12 mobility-impaired in Main Office   â†’ agent type: mobility_impaired
-- 6 staff in Reception                  â†’ agent type: staff
-- 15 visitors in Lobby                  â†’ agent type: visitor
+- 90 adults in Main Office              -> agent type: adult
+- 12 mobility-impaired in Main Office   -> agent type: mobility_impaired
+- 6 staff in Reception                  -> agent type: staff
+- 15 visitors in Lobby                  -> agent type: visitor
 Use node names.
 ```
 
@@ -352,7 +352,7 @@ Use node names.
 
 ---
 
-### 5 â€” Density-Based Population
+### 5 - Density-Based Population
 
 <details>
 <summary>Show prompt and workflow</summary>
@@ -363,9 +363,9 @@ Use node names.
 Use evacuationz to draft a population file using occupant density.
 
 Spaces:
-- Open Office:    0.10 agents/mÂ²
-- Training Room:  0.50 agents/mÂ²
-- Lobby:          0.20 agents/mÂ²
+- Open Office:    0.10 agents/m^2
+- Training Room:  0.50 agents/m^2
+- Lobby:          0.20 agents/m^2
 
 Agent type: adult. Use node names.
 ```
@@ -373,11 +373,11 @@ Agent type: adult. Use node names.
 **Density-based authoring workflow**
 
 ```
-1. Validate map  â†’  confirm node length and width values
-2. Compute area  â†’  resolve any missing dimensions
-3. Apply density â†’  calculate expected agent counts per node
-4. Draft XML     â†’  write PopulationDefinition blocks
-5. Validate      â†’  confirm total agents match plan
+1. Validate map  ->  confirm node length and width values
+2. Compute area  ->  resolve any missing dimensions
+3. Apply density ->  calculate expected agent counts per node
+4. Draft XML     ->  write PopulationDefinition blocks
+5. Validate      ->  confirm total agents match plan
 ```
 
 The skill will prompt for missing area data if node dimensions are not defined in the map.
@@ -386,7 +386,7 @@ The skill will prompt for missing area data if node dimensions are not defined i
 
 ---
 
-### 6 â€” Scenario Output Contract
+### 6 - Scenario Output Contract
 
 <details>
 <summary>Show prompt and expected XML</summary>
@@ -439,7 +439,7 @@ Required outputs:
 
 ---
 
-### 7 â€” Benchmark Comparison
+### 7 - Benchmark Comparison
 
 <details>
 <summary>Show prompt, command, and expected result</summary>
@@ -474,7 +474,7 @@ Status:     PASS
 
 ---
 
-### 8 â€” Completed Run Review
+### 8 - Completed Run Review
 
 <details>
 <summary>Show prompt and command</summary>
@@ -495,13 +495,13 @@ log warnings and errors, and whether the output set supports my conclusions.
 python .\scripts\summarize_evac_outputs.py "D:\path\to\run-output" --json
 ```
 
-> Requires Evacuationz output files â€” `log.html`, `results.html`, `evac.csv`, `nodes.csv`, `agents.csv`, or equivalent. The script exits cleanly on input-only folders.
+> Requires Evacuationz output files - `log.html`, `results.html`, `evac.csv`, `nodes.csv`, `agents.csv`, or equivalent. The script exits cleanly on input-only folders.
 
 </details>
 
 ---
 
-### 9 â€” Design Comparison Study Plan
+### 9 - Design Comparison Study Plan
 
 <details>
 <summary>Show prompt and expected deliverables</summary>
@@ -519,7 +519,7 @@ Alternatives:
 - Option B: add a second final exit
 
 Population: 240 office occupants
-Pre-evacuation: triangular distribution â€” min 30 s, mode 90 s, max 240 s
+Pre-evacuation: triangular distribution - min 30 s, mode 90 s, max 240 s
 
 Required outputs: final evacuation time, T90, node congestion, exit split
 ```
@@ -538,7 +538,7 @@ Required outputs: final evacuation time, T90, node congestion, exit split
 
 ---
 
-### 10 â€” Research Workflow with Uncertainty
+### 10 - Research Workflow with Uncertainty
 
 <details>
 <summary>Show prompt and expected deliverables</summary>
@@ -607,24 +607,24 @@ The skill actively checks for all of the following:
 
 ```
 Goal definition
-     â”‚
-     â–¼
-Project folder audit  â”€â”€â–º  Fix missing references and structural issues
-     â”‚
-     â–¼
+     |
+     v
+Project folder audit  -->  Fix missing references and structural issues
+     |
+     v
 Confirm all file roles
-(map Â· populate Â· agent-type Â· scenario Â· simulation Â· system)
-     â”‚
-     â–¼
+(map - populate - agent-type - scenario - simulation - system)
+     |
+     v
 Run Evacuationz
-     â”‚
-     â–¼
-Summarise outputs  â”€â”€â–º  Check log for warnings and stop reason
-     â”‚
-     â–¼
-Benchmark comparisons  â”€â”€â–º  Validate mechanism-level behaviour
-     â”‚
-     â–¼
+     |
+     v
+Summarise outputs  -->  Check log for warnings and stop reason
+     |
+     v
+Benchmark comparisons  -->  Validate mechanism-level behaviour
+     |
+     v
 Report or study matrix
 ```
 
