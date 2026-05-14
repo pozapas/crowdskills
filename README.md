@@ -13,20 +13,28 @@
 
 # CrowdSkill
 
-CrowdSkill is a structured library of AI-agent skills for pedestrian dynamics research and engineering. It covers the full analytical pipeline: microscopic and mesoscopic simulation, empirical trajectory extraction from video, trajectory-based flow analysis, and egress-safety modeling. Each skill encapsulates a tool's operational surface — its API topology, workflow sequencing, failure modes, output schema, and validation criteria — as agent-executable instructions rather than prose documentation.
+CrowdSkill is a structured library of AI-agent skills for pedestrian dynamics research and engineering. It covers the full analytical pipeline: microscopic and mesoscopic simulation, empirical trajectory extraction from video, trajectory-based flow analysis, and egress-safety modeling. Each skill encapsulates a tool's operational surface, its API topology, workflow sequencing, failure modes, output schema, and validation criteria, as agent-executable instructions rather than prose documentation.
 
 > Simulation work is only reproducible when every decision is recoverable: which model family, which parameter set, which seed schedule, which output columns, which measurement geometry, and which benchmark the results are compared against. CrowdSkill makes those decisions explicit at every stage.
 
 ## Table of Contents
 
-- [Release Notes — Version 1.0](#release-notes--version-10)
-- [Skill Inventory](#skill-inventory)
-- [Design Principles](#design-principles)
-- [Package Structure](#package-structure)
-- [Installation](#installation)
-- [Representative Invocations](#representative-invocations)
-- [Workflow Coverage](#workflow-coverage)
-- [Contributing a New Skill](#contributing-a-new-skill)
+- [CrowdSkill](#crowdskill)
+  - [Table of Contents](#table-of-contents)
+  - [Release Notes — Version 1.0](#release-notes--version-10)
+  - [Skill Inventory](#skill-inventory)
+  - [Design Principles](#design-principles)
+  - [Package Structure](#package-structure)
+  - [Installation](#installation)
+    - [npx (cross-platform)](#npx-cross-platform)
+    - [Local installer (explicit path control)](#local-installer-explicit-path-control)
+    - [Manual installation](#manual-installation)
+  - [Representative Invocations](#representative-invocations)
+  - [Workflow Coverage](#workflow-coverage)
+    - [Experiment Design](#experiment-design)
+    - [Automation and Batch Execution](#automation-and-batch-execution)
+    - [Output Validation and Analysis](#output-validation-and-analysis)
+  - [Contributing a New Skill](#contributing-a-new-skill)
 
 ---
 
@@ -94,7 +102,7 @@ tool-name/
 | --- | --- |
 | `SKILL.md` | Agent instruction document: workflow sequencing, decision tables, API surface notes, quality gates, failure-mode catalog, and output validation criteria |
 | `references/` | Compact domain-specific reference material: modeling theory, API contracts, common pitfalls, measurement geometry definitions, and output schema annotations |
-| `scripts/` | Deterministic utility scripts: manifest generators, output validators, index builders, and schema checkers — each with a single, auditable responsibility |
+| `scripts/` | Deterministic utility scripts: manifest generators, output validators, index builders, and schema checkers, each with a single, auditable responsibility |
 | `assets/templates/` | Reusable starting points: annotated analysis pipelines, batch runner configurations, scenario checklists, and seed-sweep manifests |
 | `agents/openai.yaml` | Display metadata for agent UI registration |
 
@@ -229,7 +237,7 @@ behavior against the published benchmark, and produce a structured run summary.
 - SQLite trajectory schema and integrity checks
 - `.mmdb` database completeness and query provenance
 - Required-column validation for all CSV result exports
-- Measurement geometry provenance — confirming that measurement areas match the geometry used in the simulation
+- Measurement geometry provenance, confirming that measurement areas match the geometry used in the simulation
 - Reproducible output directory conventions with version-stamped manifests
 - Result interpretation grounded in reported metrics, not qualitative animation review
 
@@ -238,7 +246,7 @@ behavior against the published benchmark, and produce a structured run summary.
 ## Contributing a New Skill
 
 1. Create the package root at `tool-name/tool-name/SKILL.md` following the canonical layout.
-2. Author `SKILL.md` with explicit workflow sequencing, API surface notes, a failure-mode catalog, and output validation criteria — not a prose summary of the manual.
+2. Author `SKILL.md` with explicit workflow sequencing, API surface notes, a failure-mode catalog, and output validation criteria, not a prose summary of the manual.
 3. Add `references/` entries for non-obvious modeling decisions, API contracts, and known pitfalls.
 4. Add `scripts/` only when a deterministic, single-responsibility helper materially reduces error surface or makes an implicit assumption explicit.
 5. Add `assets/templates/` for any task that a user will repeat across projects.
